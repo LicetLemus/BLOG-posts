@@ -11,6 +11,10 @@ def create_app():
     app.config.from_object("config.Config")
 
     db.init_app(app)
+    
+    from flask_ckeditor import CKEditor
+    
+    ckeditor = CKEditor(app)
 
     from blogr import home
 
